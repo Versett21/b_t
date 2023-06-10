@@ -68,8 +68,7 @@ def start(message):
 @bot.message_handler(commands=['results'])
 def show_results(message):
     user_id = message.from_user.id
-
-    # Извлечение результатов опроса пользователя из базы данных
+    
     results = db.search(Query().user_id == user_id)
 
     if results:
